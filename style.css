@@ -335,7 +335,23 @@ section{
     flex-direction: column;
 }
 
-.article-container{
+.article-container {
+  display: flex;
+  text-align: initial;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 2.5rem;
+  justify-content: space-around;
+}
+
+article {
+  display: flex;
+  width: 10rem;
+  justify-content: space-around;
+  gap: 0.5rem;
+}
+
+.article-container-1{
     display: flex;
     text-align: initial;
     flex-wrap: wrap;
@@ -345,14 +361,14 @@ section{
 }
 
 @media screen and (min-width: 768px) {
-    .article-container {
+    .article-container-1 {
         flex-direction: row; /* Side by side on larger screens */
         flex-wrap: wrap;
         justify-content: space-between;
     }
 }
 
-article{
+.article1{
     display: flex;
     align-items: flex-start;
     gap: 1rem;
@@ -373,7 +389,7 @@ article img.icon {
     flex-shrink: 0;
 }
 
-article div {
+.article1 div {
     flex: 1; /* Text takes remaining space */
 }
 
