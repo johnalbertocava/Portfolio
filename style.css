@@ -336,23 +336,45 @@ section{
 }
 
 .article-container{
-    display:flex;
+    display: flex;
     text-align: initial;
     flex-wrap: wrap;
     flex-direction: row;
-    gap: 2.5rem;
+    gap: 1rem;
     justify-content: space-around;
+}
+
+@media screen and (min-width: 768px) {
+    .article-container {
+        flex-direction: row; /* Side by side on larger screens */
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 }
 
 article{
     display: flex;
-    width: 10rem;
-    justify-content: space-around;
-    gap: 0.5rem;
+    align-items: flex-start;
+    gap: 1rem;
+    flex: 1 1 250px; /* Flexible width, min 250px, grow as needed */
+    padding: 1rem;
+    border-radius: 1rem;
+    background: #f9f9f9;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    word-wrap: break-word; /* Ensure text wraps nicely */
 }
 
 .article .icon{
     cursor: default;
+}
+article img.icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+article div {
+    flex: 1; /* Text takes remaining space */
 }
 
 /* PROJECTS SECTION */
