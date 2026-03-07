@@ -167,6 +167,7 @@ section {
     gap: 1.5rem;
   }
 
+  /* default: images scale responsively inside their containers */
   .section__pic-container {
     width: 100%;
     height: auto;
@@ -179,12 +180,75 @@ section {
     width: 100%;
     height: auto;
     display: block;
+    object-fit: cover;
+  }
+
+  /* Profile photo: keep smaller and centered on mobile so it doesn't dominate the page */
+  #profile .section__pic-container {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #profile .section__pic-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1.5rem;
+    display: block;
+  }
+
+  /* About section image: constrain max width and center */
+  #about .section__pic-container,
+  #about .section__pic-container img,
+  .about-pic {
+    max-width: 360px;
+    margin: 0 auto 1.75rem;
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 1.5rem;
+  }
+
+  /* extra spacing between image and the experience/education details */
+  #about .about-containers {
+    gap: 1.75rem;
+    margin-top: 0.5rem;
   }
 
   .about-details-container,
   .details-container,
   .text-container {
     width: 100%;
+  }
+
+  /* Reduce font sizes for better readability on small screens */
+  #about .text-container p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgb(80,80,80);
+  }
+
+  /* Slightly reduce profile subtitle size on mobile */
+  #profile .section__text__p2 {
+    font-size: 1.15rem;
+  }
+
+  /* Experience: reduce heading and paragraph sizes on mobile */
+  #experience .article-container article h3 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  #experience .article-container article p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgb(85,85,85);
+    max-width: 100%;
   }
 }
 
@@ -355,7 +419,7 @@ section {
 .experience-sub-title {
   color: rgb(85, 85, 85);
   font-weight: 600;
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   margin-bottom: 2rem;
 }
 
@@ -374,15 +438,38 @@ section {
   justify-content: space-around;
 }
 
-article {
+/* Experience articles: allow flexible width, align content top */
+#experience .article-container article {
   display: flex;
-  width: 10rem;
-  justify-content: space-around;
-  gap: 0.5rem;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex: 1 1 220px;
+  box-sizing: border-box;
+  min-width: 180px;
+  max-width: 360px;
 }
 
-article .icon {
+#experience .article-container article .icon {
   cursor: default;
+  height: 1.6rem;
+  margin-top: 0.25rem;
+}
+
+/* Headings and paragraph readability inside experience items */
+#experience .article-container article h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.25rem 0;
+  color: #111;
+}
+
+#experience .article-container article p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+  color: rgb(85,85,85);
+  max-width: 22rem;
+  hyphens: auto;
 }
 
 /* PROJECTS SECTION */
@@ -424,18 +511,6 @@ article .icon {
   flex: 0 1 calc((100% - 4rem) / 3);
   box-sizing: border-box;
   margin-bottom: 1rem;
-}
-
-/* Ensure project cards keep consistent height and buttons align at bottom */
-#projects .details-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 360px;
-}
-
-#projects .btn-container {
-  justify-content: center;
 }
 
 /* Medium screens: 2 columns */
