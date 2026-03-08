@@ -535,6 +535,14 @@ section {
   color: rgb(85,85,85);
 }
 
+/* Ensure key responsibility headings inside the projects description are black */
+.project-more-text b,
+.project-more-text u,
+.project-more-text strong,
+.project-more-text .khead {
+  color: black;
+}
+
 /* Projects grid: keep first 3 per row, wrap remaining */
 #projects .about-containers {
   display: flex;
