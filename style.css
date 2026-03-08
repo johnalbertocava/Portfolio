@@ -167,6 +167,17 @@ section {
     gap: 1.5rem;
   }
 
+  /* Mobile: reduce nav link sizes for better fit */
+  .nav-links {
+    font-size: 1.05rem;
+    gap: 1rem;
+  }
+
+  .menu-links a {
+    font-size: 1.05rem;
+    padding: 8px 12px;
+  }
+
   /* default: images scale responsively inside their containers */
   .section__pic-container {
     width: 100%;
@@ -499,6 +510,24 @@ section {
   border-color: rgb(163, 163, 163);
 }
 
+/* Projects read-more styles */
+.project-read-more {
+  padding: 1rem;
+  width: 8rem;
+  font-weight: 600;
+  border-radius: 2rem;
+  border: rgb(120,120,120) 0.1rem solid;
+  background: none;
+  cursor: pointer;
+}
+
+.project-more-text {
+  font-size: 0.98rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: rgb(85,85,85);
+}
+
 /* Projects grid: keep first 3 per row, wrap remaining */
 #projects .about-containers {
   display: flex;
@@ -537,7 +566,10 @@ section {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 70vh;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+  box-sizing: border-box;
+  min-height: fit-content;
 }
 
 .contact-info-upper-container {
